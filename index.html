@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <p>{{arr}}</p>
+    <input type="text" v-model="arr">
+    <button v-on:click="clickFn">点一点</button>
+  </div>
+  <script src="./src/watcher.js"></script>
+  <script src="./src/observe.js"></script>
+  <script src="./src/compile.js"></script>
+  <script src="./src/vue.js"></script>
+  <script>
+    // 创建 vm 实例
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '哈哈',
+        tag: '<h3>哈啊哈<h3>',
+        car: {
+          b: '奥迪',
+          color: 'blue'
+        },
+        arr: [1,2,3,4,5]
+      },
+      methods: {
+        clickFn(){
+          this.msg = '宝马'
+        }
+      },
+    })
+
+    console.log(vm);
+  </script>
+</body>
+
+</html>
